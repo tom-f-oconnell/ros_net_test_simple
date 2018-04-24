@@ -1,0 +1,13 @@
+<launch>
+  <!-- TODO user tag required? env.sh on remote or local? name = hostname? -->
+  <!--
+
+  $(optenv MT_REMOTE_TRACKER cthulhu)
+
+  ~ work in env path?
+  -->
+  <machine name="cthulhu" address="cthulhu" env-loader="~/catkin/devel/env.sh"/>
+
+  <node name="listener" pkg="ros_net_test_simple" type="listener.py" output="screen"/>
+  <node name="talker" pkg="ros_net_test_simple" type="talker.py" output="screen"/>
+</launch>
