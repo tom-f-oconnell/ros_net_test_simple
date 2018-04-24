@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-# TODO need to export? possible to run two ROS instances on the same computer
-# if they differ on some of these settings?
+# So far, it seems that "export" isn't necessary, nor ROS_HOSTNAME
 ROS_MASTER_URI=http://walking:11311
 
-# not clear this is needed?
-#ROS_HOSTNAME=walking
+# Since this script isn't executed from its current path, but we still
+# want to specify path to catkin setup.bash relative to this script.
+ls ${SCRIPTPATH}/../../../devel/ 1>&2
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+. ${SCRIPTPATH}/../../../devel/setup.bash
 
-. ../../../devel/setup.bash
 exec "$@"
