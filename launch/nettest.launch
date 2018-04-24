@@ -9,6 +9,8 @@
   <machine name="cthulhu" address="cthulhu"
     env-loader="~/catkin/src/ros_net_test_simple/scripts/env.sh"/>
 
-  <node name="talker" pkg="ros_net_test_simple" type="talker.py" output="screen"/>
-  <node machine="cthulhu" name="listener" pkg="ros_net_test_simple" type="listener.py" output="screen"/>
+  <node name="talker" pkg="ros_net_test_simple" type="talker.py" output="screen"
+    required="true"/>
+  <node machine="cthulhu" name="listener" pkg="ros_net_test_simple"
+    type="listener.py" output="screen" required="true"/>
 </launch>
